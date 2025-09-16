@@ -1,15 +1,22 @@
+import type React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cormorant, Proza_Libre } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { Suspense } from "react";
+import Navigation from "@/components/navigation";
 import "./globals.css";
+import { Cormorant, Proza_Libre } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 const cormorant = Cormorant({
@@ -22,10 +29,11 @@ const prozaLibre = Proza_Libre({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
 export const metadata: Metadata = {
-  title: "Savannah Station",
-  description: "Savannah Station Hotel",
+  title: "The Savannah Station - Historic Event Center",
+  description:
+    "Experience unforgettable moments at The Savannah Station, a historic event center in the heart of Savannah, Georgia.",
+  generator: "v0.app",
 };
 
 export default function RootLayout({
@@ -36,10 +44,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${prozaLibre.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${prozaLibre.variable} font-sans antialiased`}  
       >
-        {children}
+        {/* The problematic div has been removed. */}
+        <Navigation />
+        
+        <main>
+          <Suspense fallback={null}>{children}</Suspense>
+        </main>
+        
+        <Analytics />
       </body>
     </html>
   );
 }
+
+
