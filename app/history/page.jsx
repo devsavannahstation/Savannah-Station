@@ -1,7 +1,19 @@
+"use client";
 import Header from "@/components/header";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  fadeIn,
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerItem,
+  imageReveal,
+  viewportSettings,
+} from "@/lib/animations";
 
 export default function HistoryPage() {
   return (
@@ -11,47 +23,75 @@ export default function HistoryPage() {
 
       <div className="bg-[#DBE3E5] py-20 sm:px-20 px-5">
         <div className="container mx-auto sm:px-4 px-0">
-          <div className="text-center mb-10">
-            <h1 className="text-5xl sm:text-7xl font-cormorant font-bold mb-4">
+          <motion.div
+            className="text-center mb-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+          >
+            <motion.h1
+              className="text-5xl sm:text-7xl font-cormorant font-bold mb-4"
+              variants={fadeInUp}
+            >
               "Our Service comes from Our History"
-            </h1>
-          </div>
+            </motion.h1>
+          </motion.div>
 
           <div className="space-y-16 mt-16">
             {/* Historic Building Section */}
-            <div className="text-center mb-20">
-              <Image
-                width={1000}
-                height={1000}
-                src="/history1.png"
-                alt="Historic Savannah Station"
-                className="w-full aspect-[16/9]  mx-auto h-94 sm:h-150 object-cover mb-16"
-              />
-              <h2 className="text-3xl lg:text-5xl font-cormorant font-bold mb-6 tracking-wider">
+            <motion.div
+              className="text-center mb-20"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={staggerContainer}
+            >
+              <motion.div variants={imageReveal}>
+                <Image
+                  width={1000}
+                  height={1000}
+                  src="/history.jpg"
+                  alt="Historic Savannah Station"
+                  className="w-full aspect-[16/9]  mx-auto h-94 sm:h-150 object-cover mb-16"
+                />
+              </motion.div>
+              <motion.h2
+                className="text-3xl lg:text-5xl font-cormorant font-bold mb-6 tracking-wider"
+                variants={fadeInUp}
+              >
                 History of Savannah Station
-              </h2>
-              <p className="text-stone-600 text-xs lg:text-xl mab-4 mx-auto max-w-6xl font-proza-libre leading-relaxed opacity-90">
+              </motion.h2>
+              <motion.p
+                className="text-stone-600 text-xs lg:text-xl mab-4 mx-auto max-w-6xl font-proza-libre leading-relaxed opacity-90"
+                variants={fadeInUp}
+              >
                 Savannah&apos;s recorded history begins in 1733. That&apos;s the
                 year General James Oglethorpe and the 120 passengers of the good
                 ship "Anne" landed on a bluff high along the Savannah River in
                 February. Oglethorpe named the 13th and final American colony
                 "Georgia" after England&apos;s King George II. Savannah became
                 its first city.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Gilded Age President Section */}
-            <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-0 gap-5">
-              <div className="w-full sm:w-1/2 ">
+            <motion.div
+              className="flex flex-col sm:flex-row justify-center items-center sm:gap-0 gap-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={staggerContainer}
+            >
+              <motion.div className="w-full sm:w-1/2 " variants={fadeInLeft}>
                 <Image
                   width={1000}
                   height={1000}
-                  src="/history2.png"
+                  src="/gifted.jpg"
                   alt="Gilded Age President"
                   className="w-auto h-94 object-cover aspect-square"
                 />
-              </div>
-              <div className="text-center">
+              </motion.div>
+              <motion.div className="text-center" variants={fadeInRight}>
                 <h3 className="sm:text-5xl text-4xl font-cormorant font-bold mb-6">
                   Gilded Age President
                 </h3>
@@ -69,23 +109,38 @@ export default function HistoryPage() {
                   represented a strategic military victory and a significant
                   step toward ending the war.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Historic Plans */}
-            <div className="text-center sm:m-28 sm:mx-0 sm:my-0 mx-5 my-10 m-0">
+            <motion.div
+              className="text-center sm:m-28 sm:mx-0 sm:my-0 mx-5 my-10 m-0"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={imageReveal}
+            >
               <Image
                 width={1000}
                 height={1000}
-                src="/history3.png"
+                src="/map.png"
                 alt="Historic Building Plans"
                 className="lg:w-full sm:max-w-4xl max-w-full mx-auto sm:w-120 w-full h-90 lg:h-150 object-cover mb-6"
               />
-            </div>
+            </motion.div>
 
             {/* Southern Service Section */}
-            <div className="flex flex-col sm:flex-row justify-center gap-16 items-center mb-16">
-              <div className="text-center w-full sm:w-2/3">
+            <motion.div
+              className="flex flex-col sm:flex-row justify-center gap-16 items-center mb-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={staggerContainer}
+            >
+              <motion.div
+                className="text-center w-full sm:w-2/3"
+                variants={fadeInLeft}
+              >
                 <h3 className="sm:text-5xl text-4xl font-cormorant font-bold mb-6">
                   Architect Symbol
                 </h3>
@@ -98,45 +153,63 @@ export default function HistoryPage() {
                   terra cotta trimmings, including two towers. The station was
                   completed in 1902 at a cost of $150,000.
                 </p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={fadeInRight}>
                 <Image
                   width={1000}
                   height={1000}
-                  src="/history2.png"
+                  src="/architect.jpg"
                   alt="Station Exterior"
                   className="w-auto h-94 object-cover mb-6 aspect-square"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Heritage Badges */}
-            <div className="text-center ">
-              <div className="flex sm:flex-row flex-col items-center justify-center lg:space-x-16  gap-8 mb-16">
-                <Image
-                  width={1000}
-                  height={1000}
-                  src="/history1.png"
-                  alt="Heritage Society"
-                  className="lg:w-75 lg:h-75 w-50 h-50 object-contain rounded-full"
-                />
-                <Image
-                  width={1000}
-                  height={1000}
-                  src="/history1.png"
-                  alt="Heritage Society"
-                  className="lg:w-75 lg:h-75 w-50 h-50 object-contain rounded-full"
-                />
-                <Image
-                  width={1000}
-                  height={1000}
-                  src="/history1.png"
-                  alt="Heritage Society"
-                  className="lg:w-75 lg:h-75 w-50 h-50object-contain rounded-full"
-                />
-              </div>
+            <motion.div
+              className="text-center "
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={staggerContainer}
+            >
+              <motion.div
+                className="flex sm:flex-row flex-col items-center justify-center lg:space-x-16  gap-8 mb-16"
+                variants={staggerContainer}
+              >
+                <motion.div variants={staggerItem}>
+                  <Image
+                    width={1000}
+                    height={1000}
+                    src="/logo_1.png"
+                    alt="Heritage Society"
+                    className="lg:w-75 lg:h-75 w-50 h-50 object-contain rounded-full"
+                  />
+                </motion.div>
+                <motion.div variants={staggerItem}>
+                  <Image
+                    width={1000}
+                    height={1000}
+                    src="/logo_2.png"
+                    alt="Heritage Society"
+                    className="lg:w-75 lg:h-75 w-50 h-50 object-contain rounded-full"
+                  />
+                </motion.div>
+                <motion.div variants={staggerItem}>
+                  <Image
+                    width={1000}
+                    height={1000}
+                    src="/logo_3.png"
+                    alt="Heritage Society"
+                    className="lg:w-75 lg:h-75 w-50 h-50object-contain rounded-full"
+                  />
+                </motion.div>
+              </motion.div>
 
-              <div className="text-center sm:py-20 py-10">
+              <motion.div
+                className="text-center sm:py-20 py-10"
+                variants={fadeInUp}
+              >
                 <h2 className="sm:text-5xl text-4xl lg:text-5xl font-cormorant font-bold mb-6 tracking-wider">
                   Export and Import Hub
                 </h2>
@@ -149,20 +222,26 @@ export default function HistoryPage() {
                   Everglades, Havana Special, Palmetto, Silver Meteor, and
                   Sunland.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row justify-between gap-16 items-center">
-              <div>
+            <motion.div
+              className="flex flex-col sm:flex-row justify-between gap-16 items-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeInLeft}>
                 <Image
                   width={1000}
                   height={1000}
-                  src="/history2.png"
+                  src="/62.jpg"
                   alt="Gilded Age President"
                   className="w-auto h-94 lg:h-94 object-cover aspect-square"
                 />
-              </div>
-              <div className="text-center">
+              </motion.div>
+              <motion.div className="text-center" variants={fadeInRight}>
                 <h3 className="text-5xl font-cormorant font-bold mb-6">
                   62 years of Legacy
                 </h3>
@@ -174,18 +253,24 @@ export default function HistoryPage() {
                   white passengers, the area thrived culturally and
                   economically.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="text-center mt-20">
+            <motion.div
+              className="text-center mt-20"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={imageReveal}
+            >
               <Image
                 width={1000}
                 height={1000}
-                src="/history3.png"
+                src="/rail.jpg"
                 alt="Historic Building Plans"
                 className="lg:w-full sm:max-w-4xl max-w-full mx-auto sm:w-120 w-full h-90 lg:h-150 object-cover mb-2"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
