@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "tailwind-scrollbar";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -13,6 +14,81 @@
   border-bottom: 1px solid #000 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+}
+
+.custom-scrollbar {
+  @apply scrollbar-thin scrollbar-track-[#DBE3E5] scrollbar-thumb-[#9CB0BB] hover:scrollbar-thumb-[#9CB0dd];
+}
+
+/* Custom scrollbar for phone input dropdown */
+.react-tel-input .country-list {
+  @apply scrollbar-thin scrollbar-track-[#DBE3E5] scrollbar-thumb-[#9CB0BB] hover:scrollbar-thumb-[#9CB0dd];
+  background: #dbe3e5 !important;
+  color: #1c1917 !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  z-index: 50 !important;
+  min-width: 8rem !important;
+  padding: 4px !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.react-tel-input .country-list .country {
+  background: transparent !important;
+  color: #1c1917 !important;
+  padding: 6px 8px !important;
+  margin: 0 !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  transition: all 0.15s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.react-tel-input .country-list .country:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+  color: #1c1917 !important;
+}
+
+.react-tel-input .country-list .country.highlight {
+  background: rgba(255, 255, 255, 0.5) !important;
+  color: #1c1917 !important;
+}
+
+.react-tel-input .country-list .country .flag {
+  margin-right: 8px !important;
+  width: 16px !important;
+  height: 12px !important;
+}
+
+.react-tel-input .country-list .country .country-name {
+  flex: 1 !important;
+  text-align: left !important;
+}
+
+.react-tel-input .country-list .country .dial-code {
+  color: hsl(var(--muted-foreground)) !important;
+  font-size: 12px !important;
+}
+
+/* Smooth animations for dropdown */
+.react-tel-input .country-list {
+  animation: fadeIn 0.15s ease-out !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 :root {
@@ -132,7 +208,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground scrollbar-thin scrollbar-track-[#DBE3E5] scrollbar-thumb-stone-400 hover:scrollbar-thumb-stone-500;
   }
 }
 

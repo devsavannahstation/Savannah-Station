@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
-import Navigation from "@/components/navigation";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import { Cormorant, Proza_Libre } from "next/font/google";
 
@@ -44,19 +44,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${prozaLibre.variable} font-sans antialiased`}  
+        className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${prozaLibre.variable} font-sans antialiased`}
       >
-        {/* The problematic div has been removed. */}
-        <Navigation />
-        
         <main>
           <Suspense fallback={null}>{children}</Suspense>
         </main>
-        
+
+        <Toaster />
         <Analytics />
       </body>
     </html>
   );
 }
-
-
