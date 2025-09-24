@@ -12,9 +12,6 @@ import {
   gentleScale,
   staggerContainer,
   staggerItem,
-  heroTitle,
-  heroSubtitle,
-  letterAnimation,
   imageReveal,
   buttonHover,
   viewportSettings,
@@ -154,7 +151,8 @@ export default function HomePage() {
                 variants={fadeInLeft}
               >
                 <h3 className="sm:text-[52px] text-3xl font-cormorant font-bold  leading-tight">
-                  Experience Unforgettable <br /> Moments at Savannah Station
+                  Experience Unforgettable <br /> Moments at The Union at <br />{" "}
+                  Savannah Station
                 </h3>
                 <p className="text-stone-600 text-xl font-proza-libre leading-tight max-w-xl">
                   Where elegance meets versatility. Whether you&apos;re planning

@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     // Prepare email content
     const mailOptions = {
       from: `"Savannah Website" <${process.env.SMTP_USER}>`,
-      to: "sricharanrayala24@gmail.com", // Receiver mail (Savannah Station email)
+      to: "kris@savstation.com, pooja@savstation.com", // Receiver mail (Savannah Station email)
       subject: `New Enquiry from ${name} ${surname}`,
       text: `
         Event: ${event}

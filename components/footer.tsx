@@ -22,19 +22,26 @@ export default function Footer() {
         viewport={viewportSettings}
         variants={staggerContainer}
       >
-        <motion.p
-          className="text-2xl sm:text-4xl font-cormorant tracking-widest font-bold"
-          variants={fadeInUp}
-        >
-          THE SAVANNAH STATION
-        </motion.p>
-        <motion.p
-          className="text-xs sm:text-sm font-proza-libre font-medium sm:tracking-[1.1em] tracking-[0.7em] mb-10 opacity-70 px-1"
-          variants={fadeInUp}
-        >
-          HISTORIC EVENT CENTER
-        </motion.p>
-
+        <div className="w-fit">
+          <motion.p
+            className="text-xs sm:text-[19px] font-jacques-francios text-center  font-medium tracking-widest opacity-70 px-1"
+            variants={fadeInUp}
+          >
+            THE UNION AT
+          </motion.p>
+          <motion.p
+            className="text-2xl sm:text-4xl font-cormorant tracking-widest font-bold"
+            variants={fadeInUp}
+          >
+            THE SAVANNAH STATION
+          </motion.p>
+          <motion.p
+            className="text-xs sm:text-sm font-proza-libre text-center font-medium sm:tracking-[0.5em] tracking-[0.7em] mb-10 opacity-70 px-1"
+            variants={fadeInUp}
+          >
+            HISTORIC EVENT CENTER
+          </motion.p>
+        </div>
         <motion.div
           className="flex flex-col sm:flex-row justify-between items-start lg:gap-8 gap-4 w-full "
           variants={staggerContainer}
@@ -43,7 +50,7 @@ export default function Footer() {
             className=" space-y-5 opacity-80 sm:text-xl text-sm font-proza-libre "
             variants={fadeInLeft}
           >
-            <p>+1 912-233-5400</p>
+            <p>+1 912-231-7275</p>
             <p className="w-full ">
               601 Cohen St, Savannah, GA 31401, United States
             </p>
@@ -62,7 +69,13 @@ export default function Footer() {
                 whileHover="hover"
                 whileTap="rest"
               >
-                <Instagram className="w-4 h-4 text-black" />
+                <Link
+                  href={
+                    "https://www.instagram.com/union.savstation?igsh=ZmZ6N3pjcHN4cG5y"
+                  }
+                >
+                  <Instagram className="w-4 h-4 text-black" />
+                </Link>
               </motion.div>
             </div>
           </motion.div>

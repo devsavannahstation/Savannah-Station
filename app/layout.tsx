@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
-import { Cormorant, Proza_Libre } from "next/font/google";
+import { Cormorant, Proza_Libre, Jacques_Francois } from "next/font/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -24,6 +24,12 @@ const cormorant = Cormorant({
   subsets: ["latin"],
 });
 
+const jacquesFrancois = Jacques_Francois({
+  variable: "--font-jacques-francios",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 const prozaLibre = Proza_Libre({
   variable: "--font-proza-libre",
   subsets: ["latin"],
@@ -33,7 +39,6 @@ export const metadata: Metadata = {
   title: "The Savannah Station - Historic Event Center",
   description:
     "Experience unforgettable moments at The Savannah Station, a historic event center in the heart of Savannah, Georgia.",
-  generator: "v0.app",
 };
 
 export default function RootLayout({
@@ -44,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${prozaLibre.variable} font-sans antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${prozaLibre.variable} ${jacquesFrancois.variable} font-sans antialiased`}
       >
         <main>
           <Suspense fallback={null}>{children}</Suspense>

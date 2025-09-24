@@ -201,6 +201,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-cormorant: var(--font-cormorant);
   --font-proza-libre: var(--font-proza-libre);
+  --font-jacques-francios: var(--font-jacques-francios);
 }
 
 @layer base {

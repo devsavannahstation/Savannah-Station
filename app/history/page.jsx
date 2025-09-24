@@ -93,7 +93,7 @@ export default function HistoryPage() {
               </motion.div>
               <motion.div className="text-center" variants={fadeInRight}>
                 <h3 className="sm:text-5xl text-4xl font-cormorant font-bold mb-6">
-                  Gilded Age President
+                  Gifted to President
                 </h3>
                 <p className="text-stone-600 text-xs lg:text-lg mab-4 mx-auto max-w-5xl font-proza-libre leading-relaxed opacity-90">
                   Savannah was symbolically gifted to President Abraham Lincoln

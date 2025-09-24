@@ -314,15 +314,16 @@ export default function ContactPage() {
                 </h3>
                 <p className="leading-relaxed text-stone-700 font-proza-libre text-lg">
                   Feel free to contact us with any questions, reservation
-                  requests, or inquiries for further details. We are here to
-                  help you create the perfect event experience.
+                  requests, or inquiries for further details. We are excited to
+                  welcome you and make you a part of the union at savannah
+                  station family
                 </p>
                 <div className="space-y-2 text-sm text-stone-700 font-proza-libre leading-relaxed">
                   <p>
-                    Phone: <strong>+1 912 233-5400</strong>
+                    Phone: <strong>+1 912-231-7275</strong>
                   </p>
                   <p>
-                    Mail: <strong>events@savannahstation.com</strong>
+                    Mail: <strong>info@savstation.com</strong>
                   </p>
                   <p>
                     Address:{" "}
