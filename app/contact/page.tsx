@@ -149,7 +149,7 @@ export default function ContactPage() {
                       <FormItem className="relative">
                         <FormControl>
                           <Input
-                            placeholder="Name"
+                            placeholder="First Name"
                             {...field}
                             className="w-full bg-transparent border-0 border-b-2 border-stone-600 focus:outline-none py-3 text-lg placeholder-stone-600 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-stone-800"
                           />
@@ -169,7 +169,7 @@ export default function ContactPage() {
                       <FormItem className="relative">
                         <FormControl>
                           <Input
-                            placeholder="Surname"
+                            placeholder="Last Name"
                             {...field}
                             className="w-full bg-transparent border-0 border-b-2 border-stone-600 focus:outline-none py-3 text-lg placeholder-stone-600 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-stone-800"
                           />
@@ -247,7 +247,7 @@ export default function ContactPage() {
                         <FormControl>
                           <Input
                             type="email"
-                            placeholder="Mail"
+                            placeholder="E-Mail"
                             {...field}
                             className="w-full bg-transparent border-0 border-b-2 border-stone-600 focus:outline-none py-3 text-lg placeholder-stone-600 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-stone-800"
                           />
