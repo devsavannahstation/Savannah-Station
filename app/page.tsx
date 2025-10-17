@@ -84,7 +84,7 @@ export default function HomePage() {
                   whileHover="hover"
                   whileTap="tap"
                 >
-                  <Button className="bg-stone-800 hover:bg-[#4b4737] text-white max-w-3xs w-56 h-16 py-5 px-10 text-2xl font-proza-libre font-medium rounded-2xl">
+                  <Button className="bg-transparent hover:bg-[#222] hover:text-white border transition-all duration-200 border-stone-800 text-stone-800 max-w-3xs w-56 h-16 py-5 px-10 text-2xl font-proza-libre font-medium rounded-2xl">
                     Inquire Now
                   </Button>
                 </motion.div>
@@ -314,7 +314,7 @@ export default function HomePage() {
                   whileHover="hover"
                   whileTap="tap"
                 >
-                  <Button className="bg-stone-800 hover:bg-[#4b4737] text-white max-w-3xs w-56 h-16 py-5 px-10 text-2xl font-proza-libre font-medium rounded-2xl">
+                  <Button className="bg-transparent hover:bg-[#222] hover:text-white border transition-all duration-200 border-stone-800 text-stone-800 max-w-3xs w-56 h-16 py-5 px-10 text-2xl font-proza-libre font-medium rounded-2xl">
                     Inquire Now
                   </Button>
                 </motion.div>

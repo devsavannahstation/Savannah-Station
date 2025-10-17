@@ -1,5 +1,5 @@
 "use client";
-import { Facebook, Instagram } from "lucide-react";
+import { ArrowRight, Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -11,6 +11,7 @@ import {
   hoverScale,
   viewportSettings,
 } from "@/lib/animations";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -22,49 +23,91 @@ export default function Footer() {
         viewport={viewportSettings}
         variants={staggerContainer}
       >
-        <div className="w-fit">
-          <motion.p
-            className="text-xs sm:text-[19px] font-jacques-francios text-center  font-medium tracking-widest opacity-70 px-1"
-            variants={fadeInUp}
-          >
-            THE UNION AT
-          </motion.p>
-          <motion.p
-            className="text-2xl sm:text-4xl font-cormorant tracking-widest font-bold"
-            variants={fadeInUp}
-          >
-            THE SAVANNAH STATION
-          </motion.p>
-          <motion.p
-            className="text-xs sm:text-sm font-proza-libre text-center font-medium sm:tracking-[0.5em] tracking-[0.7em] mb-10 opacity-70 px-1"
-            variants={fadeInUp}
-          >
-            HISTORIC EVENT CENTER
-          </motion.p>
-        </div>
         <motion.div
           className="flex flex-col sm:flex-row justify-between items-start lg:gap-8 gap-4 w-full "
           variants={staggerContainer}
         >
+          <div className="flex items-center gap-4 flex-1">
+            <Image
+              src={"/logo.png"}
+              width={60}
+              height={100}
+              alt="sav station logo"
+              className="object-contain  h-full w-auto"
+            />
+            <div className="w-fit h- flex flex-col justify-center ">
+              <motion.p
+                className="text-xs  sm:text-[12px] font-jacques-francios  font-medium tracking-widest opacity-70 px-1"
+                variants={fadeInUp}
+              >
+                THE UNION AT
+              </motion.p>
+              <motion.p
+                className="text-2xl  sm:text-3xl font-cormorant tracking-widest font-bold"
+                variants={fadeInUp}
+              >
+                THE SAVANNAH STATION
+              </motion.p>
+              <motion.p
+                className="text-xs  font-proza-libre tracking-[0.3em] opacity-70 px-1"
+                variants={fadeInUp}
+              >
+                HISTORIC EVENT CENTER
+              </motion.p>
+            </div>
+          </div>
+
           <motion.div
-            className=" space-y-5 opacity-80 sm:text-xl text-sm font-proza-libre "
+            className="opacity-80 font-proza-libre flex flex-col justify-between gap-4"
             variants={fadeInLeft}
           >
-            <p>+1 912-231-7275</p>
-            <p className="w-full ">
-              601 Cohen St, Savannah, GA 31401, United States
-            </p>
+            <div>
+              <p className="font-proza-libre text-[20px]">ADDRESS</p>
+              <p className="w-fit  font-proza-libre font-medium text-[22px]">
+                601 Cohen St,
+                <br /> Savannah, GA 31401,
+                <br /> United States
+              </p>
+            </div>
             <div className="flex space-x-4 ">
               <motion.div
-                className="p-2 border border-black rounded-full cursor-pointer "
+                className="p-2 bg-transparent hover:bg-[#222] hover:text-white border transition-all duration-200 border-stone-800 text-stone-800 rounded-full cursor-pointer "
                 variants={hoverScale}
                 whileHover="hover"
                 whileTap="rest"
               >
-                <Facebook className="w-4 h-4 text-black" />
+                <Link
+                  className="flex gap-2 items-center text-sm"
+                  href={
+                    "https://www.google.com/maps/place/601+Cohen+St,+Savannah,+GA+31401/@32.072735,-81.1030621,184m/data=!3m1!1e3!4m6!3m5!1s0x88fb9e43f64e9559:0x5fc8ff412e905423!8m2!3d32.0724605!4d-81.1029279!16s%2Fg%2F11c3q13pgb?hl=en&entry=ttu&g_ep=EgoyMDI1MTAxNS4wIKXMDSoASAFQAw%3D%3D"
+                  }
+                >
+                  Get Directions <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+          <motion.div
+            className=" opacity-80 font-proza-libre flex flex-col justify-between h-full gap-4"
+            variants={fadeInLeft}
+          >
+            <div>
+              <p className="font-proza-libre text-[20px]">PHONE</p>
+              <p className="w-fit  font-proza-libre font-medium text-[22px]">
+                (+1) 912-231-7275
+              </p>
+            </div>
+            <div className="flex space-x-4 ">
+              <motion.div
+                className="p-2 bg-transparent hover:bg-[#222] hover:text-white border transition-all duration-200 border-stone-800 text-stone-800 rounded-full cursor-pointer "
+                variants={hoverScale}
+                whileHover="hover"
+                whileTap="rest"
+              >
+                <Facebook className="w-4 h-4 " />
               </motion.div>
               <motion.div
-                className="p-2 border border-black rounded-full cursor-pointer "
+                className="p-2 bg-transparent hover:bg-[#222] hover:text-white border transition-all duration-200 border-stone-800 text-stone-800 rounded-full cursor-pointer "
                 variants={hoverScale}
                 whileHover="hover"
                 whileTap="rest"
@@ -74,64 +117,10 @@ export default function Footer() {
                     "https://www.instagram.com/union.savstation?igsh=ZmZ6N3pjcHN4cG5y"
                   }
                 >
-                  <Instagram className="w-4 h-4 text-black" />
+                  <Instagram className="w-4 h-4 " />
                 </Link>
               </motion.div>
             </div>
-          </motion.div>
-
-          <motion.div className="" variants={fadeInUp}>
-            <h4 className="font-semibold text-2xl font-proza-libre mb-3">
-              Info
-            </h4>
-            <motion.ul
-              className="space-y-2 sm:text-lg text-sm opacity-80 font-proza-libre flex flex-col gap-2"
-              variants={staggerContainer}
-            >
-              <motion.div variants={staggerItem}>
-                <Link href="/">Home</Link>
-              </motion.div>
-              <motion.div variants={staggerItem}>
-                <Link href="/history">History</Link>
-              </motion.div>
-              <motion.div variants={staggerItem}>
-                <Link href="/gallery">Gallery</Link>
-              </motion.div>
-              <motion.div variants={staggerItem}>
-                <Link href="/contact">Contact Us</Link>
-              </motion.div>
-            </motion.ul>
-          </motion.div>
-
-          <motion.div className="sm:block hidden" variants={fadeInRight}>
-            <iframe
-              width="539px"
-              height="320px"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
-              src="https://maps.google.com/maps?width=539px&amp;height=320px&amp;hl=en&amp;q=601%20Cohen%20St,%20Savannah,%20GA%2031401,%20United%20States+(THE%20SAVANNAH%20STATION)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            >
-              <a href="https://www.mapsdirections.info/it/calcola-la-popolazione-su-una-mappa/">
-                densità di popolazione Italia mappa
-              </a>
-            </iframe>
-          </motion.div>
-          <motion.div className="sm:hidden block" variants={fadeInRight}>
-            <iframe
-              width="100%"
-              height="200px"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
-              src="https://maps.google.com/maps?width=539px&amp;height=320px&amp;hl=en&amp;q=601%20Cohen%20St,%20Savannah,%20GA%2031401,%20United%20States+(THE%20SAVANNAH%20STATION)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            >
-              <a href="https://www.mapsdirections.info/it/calcola-la-popolazione-su-una-mappa/">
-                densità di popolazione Italia mappa
-              </a>
-            </iframe>
           </motion.div>
         </motion.div>
 

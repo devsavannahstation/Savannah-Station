@@ -290,7 +290,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-stone-800 hover:bg-[#4b4737] disabled:bg-stone-400 disabled:cursor-not-allowed text-white max-w-3xs w-56 h-16 py-5 px-10 text-2xl font-proza-libre font-medium rounded-2xl transition-colors"
+                      className="bg-transparent hover:bg-[#222] hover:text-white border transition-all duration-200 border-stone-800 text-stone-800 max-w-3xs w-56 h-16 py-5 px-10 text-2xl font-proza-libre font-medium rounded-2xl"
                     >
                       {isSubmitting ? "Sending..." : "Inquire Now"}
                     </Button>
@@ -309,8 +309,9 @@ export default function ContactPage() {
           >
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               <motion.div className="space-y-4" variants={fadeInLeft}>
-                <h3 className="lg:text-6xl leading-tight text-4xl font-cormorant font-bold  text-stone-800">
-                  REACH OUT TO <br /> SAVANNAH <br /> STATION
+                <h3 className="lg:text-6xl text-4xl font-cormorant font-bold  text-stone-800">
+                  REACH OUT TO <br />
+                  THE UNION AT <br /> SAVANNAH <br /> STATION
                 </h3>
                 <p className="leading-relaxed text-stone-700 font-proza-libre text-lg">
                   Feel free to contact us with any questions, reservation
