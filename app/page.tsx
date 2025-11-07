@@ -114,7 +114,7 @@ export default function HomePage() {
               >
                 <div className="w-16 h-px bg-stone-400 mx-auto "></div>
                 <p className="lg:text-5xl md:text-2xl font-proza-libre text-stone-800">
-                  9800 Sq. Mt
+                  8100 Sq. Mt
                 </p>
                 <p className="text-xs font-light text-stone-500">
                   Total Event Space
@@ -127,7 +127,7 @@ export default function HomePage() {
               >
                 <div className="w-16 h-px bg-stone-400 mx-auto "></div>
                 <p className="lg:text-5xl md:text-2xl font-proza-libre text-stone-800">
-                  450
+                  500
                 </p>
                 <p className="text-xs font-light text-stone-500">
                   Capacity Largest Space
