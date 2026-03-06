@@ -113,7 +113,9 @@ export default function Footer() {
                 whileTap="rest"
               >
                 <Link
-                  href={"https://www.instagram.com/theunion.savannahstation/"}
+                  href={
+                    "https://www.instagram.com/theunion.savannahstation/?utm_source=ig_embed&amp%3Butm_campaign=loading%22"
+                  }
                 >
                   <Instagram className="w-4 h-4 " />
                 </Link>
