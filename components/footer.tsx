@@ -114,7 +114,7 @@ export default function Footer() {
               >
                 <Link
                   href={
-                    "https://www.instagram.com/theunion.savannahstation/?utm_source=ig_embed&amp%3Butm_campaign=loading%22"
+                    "https://www.instagram.com/theunion.savannahstation/"
                   }
                 >
                   <Instagram className="w-4 h-4 " />
