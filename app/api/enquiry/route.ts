@@ -53,6 +53,13 @@ export async function POST(req: Request) {
     // Send email
     await transporter.sendMail(mailOptions);
 
+    // Notify Zapier webhook
+    await fetch("https://hooks.zapier.com/hooks/catch/27027118/uns6dv6/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, surname, phone, email, message }),
+    });
+
     return NextResponse.json(
       { success: true, message: "Enquiry sent successfully!" },
       { status: 200 }
