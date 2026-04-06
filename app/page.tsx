@@ -267,7 +267,7 @@ export default function HomePage() {
             </motion.div>
           </section>
 
-          <motion.div
+          {/* <motion.div
             className="relative mb-16 sm:mx-20"
             initial="hidden"
             whileInView="visible"
@@ -282,7 +282,7 @@ export default function HomePage() {
               alt="Celebration"
               className="w-full h-150 object-cover shadow-lg aspect-[16/9]"
             />
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             className="text-center py-16"

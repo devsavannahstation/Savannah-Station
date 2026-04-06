@@ -5,12 +5,19 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { navSlideUp, staggerContainer, staggerItem } from "@/lib/animations";
+import { is } from "date-fns/locale";
 
 const navItems = [
   { href: "/", label: "Home", mobileLabel: "Home" },
   { href: "/history", label: "History", mobileLabel: "History" },
   { href: "/gallery", label: "Gallery", mobileLabel: "Gallery" },
   { href: "/contact", label: "Contact Us", mobileLabel: "Contact" },
+  {
+    href: "https://calendly.com/pooja-savstation/30min",
+    label: "Book a tour",
+    mobileLabel: "Book a tour",
+    isNew: true,
+  },
 ];
 
 export default function Navigation() {
@@ -34,11 +41,12 @@ export default function Navigation() {
           <motion.div key={item.href} variants={staggerItem}>
             <Link
               href={item.href}
+              target={item.isNew ? "_blank" : ""}
               className={cn(
                 "py-1 text-xs sm:text-xl font-proza-libre font-medium tracking-wide transition-colors duration-300 ease-in-out hover:underline hover:underline-offset-4 sm:hover:underline-offset-8 text-center",
                 pathname === item.href
                   ? "text-[#211D1E] underline underline-offset-4 sm:underline-offset-8"
-                  : "text-black hover:-translate-y-1"
+                  : "text-black hover:-translate-y-1",
               )}
             >
               <span className="block sm:hidden">{item.mobileLabel}</span>
